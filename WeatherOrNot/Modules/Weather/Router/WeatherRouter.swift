@@ -9,13 +9,11 @@
 import Foundation
 import UIKit
 
-protocol WeatherRouterInterface: class {
 
-}
 
-class WeatherRouter: NSObject {
+class WeatherRouter: WeatherRouterProtocol {
 
-    weak var presenter: WeatherPresenterInterface?
+    var presenter: WeatherPresenterProtocol?
 
     static func setupModule() -> WeatherViewController {
         let vc = WeatherViewController()
@@ -29,8 +27,3 @@ class WeatherRouter: NSObject {
         return vc
     }
 }
-
-extension WeatherRouter: WeatherRouterInterface {
-
-}
-

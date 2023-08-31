@@ -17,12 +17,14 @@
 		598A03582A9F52820076B6DB /* WeatherOrNotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598A03572A9F52820076B6DB /* WeatherOrNotUITests.swift */; };
 		598A035A2A9F52820076B6DB /* WeatherOrNotUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598A03592A9F52820076B6DB /* WeatherOrNotUITestsLaunchTests.swift */; };
 		59A5F8722A9F576A00CF28E2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F8712A9F576A00CF28E2 /* UIColor.swift */; };
-		59A5F8742A9F579B00CF28E2 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F8732A9F579B00CF28E2 /* UIViewController.swift */; };
 		59A5F87C2A9F5B8100CF28E2 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F87A2A9F5B8100CF28E2 /* WeatherViewController.swift */; };
 		59A5F87D2A9F5B8100CF28E2 /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A5F87B2A9F5B8100CF28E2 /* WeatherViewController.xib */; };
 		59A5F88A2A9F5C0300CF28E2 /* WeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F8862A9F5C0300CF28E2 /* WeatherInteractor.swift */; };
 		59A5F88B2A9F5C0300CF28E2 /* WeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F8872A9F5C0300CF28E2 /* WeatherRouter.swift */; };
 		59A5F88C2A9F5C0300CF28E2 /* WeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F8882A9F5C0300CF28E2 /* WeatherPresenter.swift */; };
+		59A5F88E2A9F5E6000CF28E2 /* WeatherInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F88D2A9F5E6000CF28E2 /* WeatherInteractorProtocol.swift */; };
+		59A5F8902A9F5E8A00CF28E2 /* WeatherPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F88F2A9F5E8A00CF28E2 /* WeatherPresenterProtocol.swift */; };
+		59A5F8922A9F5EBD00CF28E2 /* WeatherRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F8912A9F5EBD00CF28E2 /* WeatherRouterProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +59,14 @@
 		598A03572A9F52820076B6DB /* WeatherOrNotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherOrNotUITests.swift; sourceTree = "<group>"; };
 		598A03592A9F52820076B6DB /* WeatherOrNotUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherOrNotUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		59A5F8712A9F576A00CF28E2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		59A5F8732A9F579B00CF28E2 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		59A5F87A2A9F5B8100CF28E2 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		59A5F87B2A9F5B8100CF28E2 /* WeatherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
 		59A5F8862A9F5C0300CF28E2 /* WeatherInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherInteractor.swift; path = WeatherOrNot/Modules/Weather/Interactor/WeatherInteractor.swift; sourceTree = SOURCE_ROOT; };
 		59A5F8872A9F5C0300CF28E2 /* WeatherRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherRouter.swift; path = WeatherOrNot/Modules/Weather/Router/WeatherRouter.swift; sourceTree = SOURCE_ROOT; };
 		59A5F8882A9F5C0300CF28E2 /* WeatherPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherPresenter.swift; path = WeatherOrNot/Modules/Weather/Presenter/WeatherPresenter.swift; sourceTree = SOURCE_ROOT; };
+		59A5F88D2A9F5E6000CF28E2 /* WeatherInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInteractorProtocol.swift; sourceTree = "<group>"; };
+		59A5F88F2A9F5E8A00CF28E2 /* WeatherPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPresenterProtocol.swift; sourceTree = "<group>"; };
+		59A5F8912A9F5EBD00CF28E2 /* WeatherRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouterProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				59A5F8712A9F576A00CF28E2 /* UIColor.swift */,
-				59A5F8732A9F579B00CF28E2 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 		59A5F8772A9F5AB500CF28E2 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				59A5F88D2A9F5E6000CF28E2 /* WeatherInteractorProtocol.swift */,
 				59A5F8862A9F5C0300CF28E2 /* WeatherInteractor.swift */,
 			);
 			path = Interactor;
@@ -199,6 +203,7 @@
 		59A5F8782A9F5AC200CF28E2 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				59A5F88F2A9F5E8A00CF28E2 /* WeatherPresenterProtocol.swift */,
 				59A5F8882A9F5C0300CF28E2 /* WeatherPresenter.swift */,
 			);
 			path = Presenter;
@@ -207,6 +212,7 @@
 		59A5F8792A9F5AD000CF28E2 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				59A5F8912A9F5EBD00CF28E2 /* WeatherRouterProtocol.swift */,
 				59A5F8872A9F5C0300CF28E2 /* WeatherRouter.swift */,
 			);
 			path = Router;
@@ -345,14 +351,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				598A033B2A9F52800076B6DB /* ViewController.swift in Sources */,
+				59A5F8902A9F5E8A00CF28E2 /* WeatherPresenterProtocol.swift in Sources */,
 				59A5F87C2A9F5B8100CF28E2 /* WeatherViewController.swift in Sources */,
 				59A5F8722A9F576A00CF28E2 /* UIColor.swift in Sources */,
 				598A03372A9F52800076B6DB /* AppDelegate.swift in Sources */,
 				59A5F88C2A9F5C0300CF28E2 /* WeatherPresenter.swift in Sources */,
 				59A5F88B2A9F5C0300CF28E2 /* WeatherRouter.swift in Sources */,
 				59A5F88A2A9F5C0300CF28E2 /* WeatherInteractor.swift in Sources */,
+				59A5F88E2A9F5E6000CF28E2 /* WeatherInteractorProtocol.swift in Sources */,
+				59A5F8922A9F5EBD00CF28E2 /* WeatherRouterProtocol.swift in Sources */,
 				598A03392A9F52800076B6DB /* SceneDelegate.swift in Sources */,
-				59A5F8742A9F579B00CF28E2 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

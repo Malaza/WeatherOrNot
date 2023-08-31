@@ -8,14 +8,9 @@
 
 import Foundation
 
-protocol WeatherInteractorInterface: class {
 
-}
 
-class WeatherInteractor {
-    weak var presenter: WeatherPresenterInterface?
-}
-
-extension WeatherInteractor: WeatherInteractorInterface {
-
+class WeatherInteractor: WeatherInteractorProtocol {
+    var presenter: WeatherInteractorProtocol?
+    
 }
