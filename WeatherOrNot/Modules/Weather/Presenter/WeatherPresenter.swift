@@ -11,14 +11,22 @@ import Foundation
 
 
 class WeatherPresenter: WeatherPresenterProtocol {
-
+    
     var view: WeatherViewControllerProtocol?
     var router: WeatherRouterProtocol?
-    let interactor: WeatherInteractorProtocol?
+    var interactor: WeatherInteractorProtocol?
 
     init(interactor: WeatherInteractorProtocol, router: WeatherRouterProtocol, view: WeatherViewControllerProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router
+    }
+    
+    func fetchCurrentWeather() {
+        
+    }
+    
+    func fetchWeatherForecast() {
+        
     }
 }

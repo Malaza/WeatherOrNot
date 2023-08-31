@@ -9,8 +9,12 @@
 import Foundation
 
 
-
 class WeatherInteractor: WeatherInteractorProtocol {
+    
+    let service = Service()
     var presenter: WeatherInteractorProtocol?
+    
+    
+    
     
 }

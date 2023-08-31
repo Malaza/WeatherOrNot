@@ -9,7 +9,29 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherViewController" customModule="WeatherOrNot" customModuleProvider="target">
             <connections>
+                <outlet property="currentLabel" destination="IkX-ai-GYA" id="Nfd-gI-IM0"/>
+                <outlet property="currentWeatherLabel" destination="vyn-hN-68b" id="9Hm-Pe-vlQ"/>
+                <outlet property="forecastView" destination="rwN-XG-rsB" id="LtH-eq-I7b"/>
+                <outlet property="fridayImageView" destination="DpG-zy-sir" id="Wll-Fc-9lk"/>
+                <outlet property="fridayLabel" destination="c7i-yR-GKq" id="2ZT-j9-Dtw"/>
+                <outlet property="fridayWeatherLabel" destination="a9i-4W-hgD" id="BRq-dk-Gls"/>
+                <outlet property="maxWeatherLabel" destination="Qj1-1b-Oq6" id="3eK-CX-duO"/>
+                <outlet property="minWeatherLabel" destination="cDo-wG-sXG" id="EmY-Of-z2H"/>
+                <outlet property="mondayImageView" destination="mA6-DB-5y0" id="wF8-nF-yBW"/>
+                <outlet property="saturdayImageView" destination="qdM-jH-drf" id="cAp-5a-jfK"/>
+                <outlet property="saturdayLabel" destination="hTS-rT-jbC" id="3r7-58-00H"/>
+                <outlet property="saturdayWeatherLabel" destination="TVa-nJ-8N4" id="FI9-Xs-ueV"/>
+                <outlet property="thursdayImageView" destination="8N9-at-Vy5" id="9Ft-yK-4wc"/>
+                <outlet property="thursdayLabel" destination="dxQ-gK-Mxm" id="Iu0-dH-FE0"/>
+                <outlet property="thursdayWeatherLabel" destination="eTp-Ny-3vQ" id="sjq-t5-LHF"/>
+                <outlet property="tuesdayImageView" destination="mA6-DB-5y0" id="rwp-y0-KOm"/>
+                <outlet property="tuesdayLabel" destination="VvR-fq-2cN" id="30M-ap-JqN"/>
+                <outlet property="tuesdayWeatherLabel" destination="msW-5k-Vlz" id="Hw4-kI-Vhs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wednesdayImageView" destination="J3S-UZ-ou0" id="ps3-M8-kvJ"/>
+                <outlet property="wednesdayLabel" destination="yVB-3Z-j9E" id="1eJ-sN-kyI"/>
+                <outlet property="wednesdayWeatherLabel" destination="lzv-eq-cWr" id="fz6-lI-I90"/>
+                <outlet property="weeatherImageView" destination="3Tn-O3-Kzj" id="xJD-g1-64F"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

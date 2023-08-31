@@ -8,7 +8,12 @@
 import Foundation
 
 protocol WeatherPresenterProtocol {
+    
     var view: WeatherViewControllerProtocol? { get set }
     var router: WeatherRouterProtocol? { get set }
     var interactor: WeatherInteractorProtocol? { get set }
+    
+    
+    func fetchCurrentWeather(completion: @escaping ServiceCompletion)
+    func fetchWeatherForecast(completion: @escaping ServiceCompletion)
 }

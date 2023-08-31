@@ -16,6 +16,9 @@
 		598A034E2A9F52820076B6DB /* WeatherOrNotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598A034D2A9F52820076B6DB /* WeatherOrNotTests.swift */; };
 		598A03582A9F52820076B6DB /* WeatherOrNotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598A03572A9F52820076B6DB /* WeatherOrNotUITests.swift */; };
 		598A035A2A9F52820076B6DB /* WeatherOrNotUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598A03592A9F52820076B6DB /* WeatherOrNotUITestsLaunchTests.swift */; };
+		5999F85B2AA08B79007A78C6 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999F85A2AA08B79007A78C6 /* Service.swift */; };
+		5999F85D2AA08C7B007A78C6 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999F85C2AA08C7B007A78C6 /* ServiceProtocol.swift */; };
+		5999F85F2AA08E1A007A78C6 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999F85E2AA08E1A007A78C6 /* Path.swift */; };
 		59A5F8722A9F576A00CF28E2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F8712A9F576A00CF28E2 /* UIColor.swift */; };
 		59A5F87C2A9F5B8100CF28E2 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F87A2A9F5B8100CF28E2 /* WeatherViewController.swift */; };
 		59A5F87D2A9F5B8100CF28E2 /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A5F87B2A9F5B8100CF28E2 /* WeatherViewController.xib */; };
@@ -58,6 +61,9 @@
 		598A03532A9F52820076B6DB /* WeatherOrNotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherOrNotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		598A03572A9F52820076B6DB /* WeatherOrNotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherOrNotUITests.swift; sourceTree = "<group>"; };
 		598A03592A9F52820076B6DB /* WeatherOrNotUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherOrNotUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5999F85A2AA08B79007A78C6 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		5999F85C2AA08C7B007A78C6 /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		5999F85E2AA08E1A007A78C6 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		59A5F8712A9F576A00CF28E2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		59A5F87A2A9F5B8100CF28E2 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		59A5F87B2A9F5B8100CF28E2 /* WeatherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 		598A03352A9F52800076B6DB /* WeatherOrNot */ = {
 			isa = PBXGroup;
 			children = (
+				5999F8592AA08B4F007A78C6 /* Service */,
 				59A5F8702A9F572F00CF28E2 /* Extensions */,
 				59A5F86F2A9F571100CF28E2 /* Modules */,
 				59A5F86E2A9F56EF00CF28E2 /* AppDelegate */,
@@ -144,6 +151,16 @@
 				598A03592A9F52820076B6DB /* WeatherOrNotUITestsLaunchTests.swift */,
 			);
 			path = WeatherOrNotUITests;
+			sourceTree = "<group>";
+		};
+		5999F8592AA08B4F007A78C6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5999F85E2AA08E1A007A78C6 /* Path.swift */,
+				5999F85C2AA08C7B007A78C6 /* ServiceProtocol.swift */,
+				5999F85A2AA08B79007A78C6 /* Service.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		59A5F86E2A9F56EF00CF28E2 /* AppDelegate */ = {
@@ -355,7 +372,10 @@
 				59A5F87C2A9F5B8100CF28E2 /* WeatherViewController.swift in Sources */,
 				59A5F8722A9F576A00CF28E2 /* UIColor.swift in Sources */,
 				598A03372A9F52800076B6DB /* AppDelegate.swift in Sources */,
+				5999F85B2AA08B79007A78C6 /* Service.swift in Sources */,
+				5999F85D2AA08C7B007A78C6 /* ServiceProtocol.swift in Sources */,
 				59A5F88C2A9F5C0300CF28E2 /* WeatherPresenter.swift in Sources */,
+				5999F85F2AA08E1A007A78C6 /* Path.swift in Sources */,
 				59A5F88B2A9F5C0300CF28E2 /* WeatherRouter.swift in Sources */,
 				59A5F88A2A9F5C0300CF28E2 /* WeatherInteractor.swift in Sources */,
 				59A5F88E2A9F5E6000CF28E2 /* WeatherInteractorProtocol.swift in Sources */,
