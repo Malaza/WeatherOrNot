@@ -13,7 +13,13 @@ protocol WeatherPresenterProtocol {
     var router: WeatherRouterProtocol? { get set }
     var interactor: WeatherInteractorProtocol? { get set }
     
+    //MARK: - Input
+    func viewDidLoad()
     func requestUserLocation()
-    func fetchCurrentWeather(completion: @escaping ServiceCompletion)
-    func fetchWeatherForecast(completion: @escaping ServiceCompletion)
+    func fetchCurrentWeather(request: CurrentWeatherRequest)
+    func fetchWeatherForecast(request: WeatherForecastRequest)
+    
+    //MARK: - Output
+    func interactorDidFetchCurrentWeather(with result: Result<CurrentWeatherResponse, Error>)
+    func interactorDidFetchWeatherForecast(with result: Result<WeatherForecastResponse, Error>)
 }

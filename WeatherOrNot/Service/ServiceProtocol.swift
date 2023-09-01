@@ -10,5 +10,5 @@ import Foundation
 typealias ServiceCompletion = (Any?, ServiceError?) -> Void
 
 protocol ServiceProtocol {
-    func serviceGet(payload: AnyObject?, with path: Path, completion: @escaping ServiceCompletion)
+    func serviceGet(lat: Double, long: Double, with path: String, completion: @escaping ServiceCompletion)
 }

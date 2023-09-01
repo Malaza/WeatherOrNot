@@ -10,7 +10,7 @@ import Foundation
 
 struct CurrentWeatherResponse: Codable {
     var coord: CoordResponse?
-    var weather: WeatherResponse?
+    var weather: [WeatherResponse]?
     var base: String?
     var main: MainResponse?
     var visibility: Int?
@@ -31,7 +31,7 @@ struct CoordResponse: Codable {
 }
 
 struct WeatherResponse: Codable {
-    var id: String?
+    var id: Int?
     var main: String?
     var description: String?
     var icon: String?
@@ -69,3 +69,48 @@ struct SysResponse: Codable {
     var sunrise: Int?
     var sunset: Int?
 }
+
+
+
+//Optional(["weather": <__NSSingleObjectArrayI 0x600001105150>(
+//{
+//    description = "clear sky";
+//    icon = 01d;
+//    id = 800;
+//    main = Clear;
+//}
+//)
+//, "sys": {
+//    country = ZA;
+//    id = 1928;
+//    sunrise = 1693542978;
+//    sunset = 1693584428;
+//    type = 1;
+//},
+//"dt": 1693552153, "visibility": 10000, "timezone": 7200,
+//"wind": {
+//    deg = 216;
+//    gust = "5.32";
+//    speed = "5.35";
+//},
+//"clouds": {
+//    all = 0;
+//},
+//"base": stations,
+//"coord": {
+//    lat = "-28.47";
+//    lon = "24.67";
+//},
+//"cod": 200,
+//"main": {
+//    "feels_like" = "288.35";
+//    "grnd_level" = 894;
+//    humidity = 37;
+//    pressure = 1019;
+//    "sea_level" = 1019;
+//    temp = "289.68";
+//    "temp_max" = "289.68";
+//    "temp_min" = "289.68";
+//},
+//"id": 1021040,
+//"name": Barkly West])

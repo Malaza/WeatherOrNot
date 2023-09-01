@@ -22,17 +22,25 @@ class WeatherPresenter: WeatherPresenterProtocol {
         self.router = router
     }
     
-    
+    //MARK: - Input
+    func viewDidLoad() {
+        
+    }
     
     func requestUserLocation() {
         
     }
     
-    func fetchCurrentWeather(completion: @escaping ServiceCompletion) {
-        self.interactor?.fetchCurrentWeather()
+    func fetchCurrentWeather(request: CurrentWeatherRequest) {
+        self.interactor?.fetchCurrentWeather(request: request)
     }
     
-    func fetchWeatherForecast(completion: @escaping ServiceCompletion) {
-        self.interactor?.fetchWeatherForecast()
+    func fetchWeatherForecast(request: WeatherForecastRequest) {
+        self.interactor?.fetchWeatherForecast(request: request)
     }
+    
+    //MARK: - Output
+    func interactorDidFetchCurrentWeather(with result: Result<CurrentWeatherResponse, Error>) {}
+    
+    func interactorDidFetchWeatherForecast(with result: Result<WeatherForecastResponse, Error>) {}
 }

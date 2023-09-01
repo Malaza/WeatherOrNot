@@ -11,6 +11,6 @@ protocol WeatherInteractorProtocol {
     
     var presenter: WeatherPresenterProtocol? { get set }
     
-    func fetchCurrentWeather()
-    func fetchWeatherForecast()
+    func fetchCurrentWeather(request: CurrentWeatherRequest)
+    func fetchWeatherForecast(request: WeatherForecastRequest)
 }

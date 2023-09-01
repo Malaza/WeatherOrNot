@@ -8,6 +8,5 @@
 import Foundation
 
 enum Path: String {
-    case current = "weather"
-    case forecast = "forecast"
+    
 }

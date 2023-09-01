@@ -8,10 +8,12 @@
 import UIKit
 
 protocol WeatherViewProtocol {
-
+    
+    func presenterDidFetchCurrentWeather()
+    func presenterDidFetchWeatherForecast()
 }
 
-class WeatherViewController: UIViewController & WeatherViewProtocol {
+class WeatherViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var weeatherImageView: UIImageView!
@@ -60,10 +62,20 @@ class WeatherViewController: UIViewController & WeatherViewProtocol {
     //MARK: - Variables
     var presenter: WeatherPresenterProtocol?
 
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter?.fetchCurrentWeather(completion: { response, error in
-            
-        })
+        self.presenter?.fetchCurrentWeather(request: nil)
     }
+    
+    
+}
+
+
+extension WeatherViewController: WeatherViewProtocol {
+    
+    func presenterDidFetchCurrentWeather() {}
+    
+    func presenterDidFetchWeatherForecast() {}
 }
