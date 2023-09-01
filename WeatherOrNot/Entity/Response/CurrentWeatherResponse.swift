@@ -39,6 +39,7 @@ struct WeatherResponse: Codable {
 
 struct MainResponse: Codable {
     var temp: Double?
+    var temp_kf: Double?
     var feels_like: Double?
     var temp_min: Double?
     var temp_max: Double?

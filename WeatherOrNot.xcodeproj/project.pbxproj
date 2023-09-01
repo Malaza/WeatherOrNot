@@ -32,6 +32,8 @@
 		59A5F88E2A9F5E6000CF28E2 /* WeatherInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F88D2A9F5E6000CF28E2 /* WeatherInteractorProtocol.swift */; };
 		59A5F8902A9F5E8A00CF28E2 /* WeatherPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F88F2A9F5E8A00CF28E2 /* WeatherPresenterProtocol.swift */; };
 		59A5F8922A9F5EBD00CF28E2 /* WeatherRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5F8912A9F5EBD00CF28E2 /* WeatherRouterProtocol.swift */; };
+		59B4D9AF2AA210C90030C1B4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4D9AE2AA210C90030C1B4 /* UIViewController.swift */; };
+		59B4D9B12AA212CC0030C1B4 /* WeatherViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4D9B02AA212CC0030C1B4 /* WeatherViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		59A5F88D2A9F5E6000CF28E2 /* WeatherInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInteractorProtocol.swift; sourceTree = "<group>"; };
 		59A5F88F2A9F5E8A00CF28E2 /* WeatherPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPresenterProtocol.swift; sourceTree = "<group>"; };
 		59A5F8912A9F5EBD00CF28E2 /* WeatherRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouterProtocol.swift; sourceTree = "<group>"; };
+		59B4D9AE2AA210C90030C1B4 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		59B4D9B02AA212CC0030C1B4 /* WeatherViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				59A5F8712A9F576A00CF28E2 /* UIColor.swift */,
+				59B4D9AE2AA210C90030C1B4 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			children = (
 				59A5F87A2A9F5B8100CF28E2 /* WeatherViewController.swift */,
 				59A5F87B2A9F5B8100CF28E2 /* WeatherViewController.xib */,
+				59B4D9B02AA212CC0030C1B4 /* WeatherViewProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -432,10 +438,12 @@
 				59A5F88B2A9F5C0300CF28E2 /* WeatherRouter.swift in Sources */,
 				59A5F88A2A9F5C0300CF28E2 /* WeatherInteractor.swift in Sources */,
 				5999F8702AA20368007A78C6 /* CurrentWeatherModel.swift in Sources */,
+				59B4D9AF2AA210C90030C1B4 /* UIViewController.swift in Sources */,
 				59A5F88E2A9F5E6000CF28E2 /* WeatherInteractorProtocol.swift in Sources */,
 				59A5F8922A9F5EBD00CF28E2 /* WeatherRouterProtocol.swift in Sources */,
 				5999F8652AA1A3DA007A78C6 /* WeatherForecastResponse.swift in Sources */,
 				598A03392A9F52800076B6DB /* SceneDelegate.swift in Sources */,
+				59B4D9B12AA212CC0030C1B4 /* WeatherViewProtocol.swift in Sources */,
 				5999F86D2AA1CAF9007A78C6 /* WeatherForecastRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

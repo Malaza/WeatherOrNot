@@ -8,26 +8,36 @@
 import UIKit
 import CoreLocation
 
-protocol WeatherViewProtocol {
-    func fetchCurrentWeather()
-    func presenterDidFetchCurrentWeather()
-    func presenterDidFetchWeatherForecast()
-}
-
 class WeatherViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var weeatherImageView: UIImageView!
     
-    @IBOutlet weak var currentLabel: UILabel!
+    @IBOutlet weak var currentLabel: UILabel! {
+        didSet {
+            currentLabel.numberOfLines = 0
+        }
+    }
     
     @IBOutlet weak var forecastView: UIView!
     
-    @IBOutlet weak var minWeatherLabel: UILabel!
+    @IBOutlet weak var minWeatherLabel: UILabel! {
+        didSet {
+            minWeatherLabel.numberOfLines = 0
+        }
+    }
     
-    @IBOutlet weak var currentWeatherLabel: UILabel!
+    @IBOutlet weak var currentWeatherLabel: UILabel! {
+        didSet {
+            currentWeatherLabel.numberOfLines = 0
+        }
+    }
     
-    @IBOutlet weak var maxWeatherLabel: UILabel!
+    @IBOutlet weak var maxWeatherLabel: UILabel! {
+        didSet {
+            maxWeatherLabel.numberOfLines = 0
+        }
+    }
     
     @IBOutlet weak var tuesdayLabel: UILabel!
     
@@ -77,7 +87,18 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupLocationManager()
-//        self.presenter?.viewDidLoad()
+    }
+    
+    func configureCurrentView(model: CurrentWeatherModel) {
+        self.currentLabel.attributedText = self.attributedStringForTitle(title: model.temp, subTitle: model.mainWeather.uppercased(), large: true)
+        self.minWeatherLabel.attributedText = self.attributedStringForTitle(title: model.tempMin, subTitle: "Min", large: false)
+        self.currentWeatherLabel.attributedText = self.attributedStringForTitle(title:model.tempMax, subTitle: "Current", large: false)
+        self.maxWeatherLabel.attributedText = self.attributedStringForTitle(title: model.temp, subTitle: "Max", large: false)
+        self.weeatherImageView.image = UIImage(named: model.type.rawValue)
+    }
+    
+    func configureForecastView(model: WeatherForecastModel) {
+        
     }
 }
 
@@ -93,12 +114,37 @@ extension WeatherViewController: WeatherViewProtocol {
                 self.presenter?.fetchCurrentWeather(request: request)
             }
         }
-        
     }
     
-    func presenterDidFetchCurrentWeather() {}
+    func fetchWeatherForecast() {
+        if self.locationManager?.authorizationStatus == .authorizedAlways {
+            if let coordinate = self.locationManager?.location?.coordinate {
+                let request = WeatherForecastRequest(lat: coordinate.latitude,
+                                                    long: coordinate.longitude,
+                                                    path: Constants.forecast)
+                self.presenter?.fetchWeatherForecast(request: request)
+            }
+        }
+    }
     
-    func presenterDidFetchWeatherForecast() {}
+    func presenterDidFetchCurrentWeather(with result: Result<CurrentWeatherModel, Error>) {
+        switch result {
+        case .success(let model):
+            self.configureCurrentView(model: model)
+            self.fetchWeatherForecast()
+        case .failure(let error):
+            self.showErrorMessage(message: error.localizedDescription)
+        }
+    }
+    
+    func presenterDidFetchWeatherForecast(with result: Result<WeatherForecastModel, Error>) {
+        switch result {
+        case .success(let model):
+            self.configureForecastView(model: model)
+        case .failure(let error):
+            self.showErrorMessage(message: error.localizedDescription)
+        }
+    }
 }
 
 
@@ -108,10 +154,10 @@ extension WeatherViewController: CLLocationManagerDelegate {
         
         switch self.locationManager?.authorizationStatus {
         case .authorizedWhenInUse:
-            self.fetchCurrentWeather()
+            self.fetchWeatherForecast()
             break
         case .authorizedAlways:
-            self.fetchCurrentWeather()
+            self.fetchWeatherForecast()
             break
         case .denied:
             //Show message

@@ -34,7 +34,7 @@ class Service: ServiceProtocol {
     
     //MARK: - URL
     private func getURLRequest(lat: Double, long: Double, path: String, apiKey: String) -> NSMutableURLRequest {
-        return NSMutableURLRequest(url: NSURL(string: "https://api.openweathermap.org/data/2.5/\(path)?lat=\(lat)&lon=\(long)&appid=\(apiKey)")! as URL,
+        return NSMutableURLRequest(url: NSURL(string: "https://api.openweathermap.org/data/2.5/\(path)?lat=\(lat)&lon=\(long)&cnt=5&appid=\(apiKey)")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
     }

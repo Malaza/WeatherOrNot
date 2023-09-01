@@ -7,6 +7,16 @@
 
 import Foundation
 
-struct CurrentWeatherModel {
-    
+enum CurrentWeatherTypes: String {
+    case cloudy = "cloudy"
+    case rainy = "rainy"
+    case sunny = "sunny"
+}
+
+class CurrentWeatherModel {
+    var temp: String!
+    var tempMin: String!
+    var tempMax: String!
+    var mainWeather: String!
+    var type: CurrentWeatherTypes = .sunny
 }
