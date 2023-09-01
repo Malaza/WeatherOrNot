@@ -24,8 +24,8 @@ class WeatherInteractor: WeatherInteractorProtocol {
                 return
             }
             do {
-//                let responseData =  try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
-//                print(responseData)
+                let responseData =  try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
+                print(responseData)
                 let weather = try JSONDecoder().decode(CurrentWeatherResponse.self, from: data)
                 self.presenter?.interactorDidFetchCurrentWeather(with: .success(weather))
             }

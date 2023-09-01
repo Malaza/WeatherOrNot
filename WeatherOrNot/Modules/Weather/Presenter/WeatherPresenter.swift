@@ -23,14 +23,6 @@ class WeatherPresenter: WeatherPresenterProtocol {
     }
     
     //MARK: - Input
-    func viewDidLoad() {
-        
-    }
-    
-    func requestUserLocation() {
-        
-    }
-    
     func fetchCurrentWeather(request: CurrentWeatherRequest) {
         self.interactor?.fetchCurrentWeather(request: request)
     }
@@ -40,7 +32,18 @@ class WeatherPresenter: WeatherPresenterProtocol {
     }
     
     //MARK: - Output
-    func interactorDidFetchCurrentWeather(with result: Result<CurrentWeatherResponse, Error>) {}
+    func interactorDidFetchCurrentWeather(with result: Result<CurrentWeatherResponse, Error>) {
+        
+        switch result {
+            case .success(let weather):
+            let model = self.transformToModelList(response: cocktails)
+            self.view?.presenterDidFetchCurrentWeather()
+            case .failure(let error):
+            self.view?.presenterDidFetchCurrentWeather()
+        }
+    }
     
-    func interactorDidFetchWeatherForecast(with result: Result<WeatherForecastResponse, Error>) {}
+    func interactorDidFetchWeatherForecast(with result: Result<WeatherForecastResponse, Error>) {
+        
+    }
 }

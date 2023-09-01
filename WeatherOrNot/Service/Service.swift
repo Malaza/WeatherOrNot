@@ -15,7 +15,7 @@ class Service: ServiceProtocol {
     
     func serviceGet(lat: Double, long: Double, with path: String, completion: @escaping ServiceCompletion) {
         
-        let request = self.getURLRequest(lat: -28.47, long: 24.67, path: path, apiKey: Constants.apiKey)
+        let request = self.getURLRequest(lat: lat, long: long, path: path, apiKey: Constants.apiKey)
         request.httpMethod = "GET"
         
         let dataTask = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in

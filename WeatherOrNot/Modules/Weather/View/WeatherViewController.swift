@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol WeatherViewProtocol {
-    
+    func fetchCurrentWeather()
     func presenterDidFetchCurrentWeather()
     func presenterDidFetchWeatherForecast()
 }
@@ -61,21 +62,69 @@ class WeatherViewController: UIViewController {
     
     //MARK: - Variables
     var presenter: WeatherPresenterProtocol?
+    var locationManager: CLLocationManager?
 
+    
+    //MARK: - Setup
+    private func setupLocationManager() {
+        self.locationManager = CLLocationManager()
+        self.locationManager?.delegate = self
+        self.locationManager?.requestAlwaysAuthorization()
+    }
+    
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter?.fetchCurrentWeather(request: nil)
+        self.setupLocationManager()
+//        self.presenter?.viewDidLoad()
     }
-    
-    
 }
 
 
 extension WeatherViewController: WeatherViewProtocol {
     
+    func fetchCurrentWeather() {
+        if self.locationManager?.authorizationStatus == .authorizedAlways {
+            if let coordinate = self.locationManager?.location?.coordinate {
+                let request = CurrentWeatherRequest(lat: coordinate.latitude,
+                                                    long: coordinate.longitude,
+                                                    path: Constants.current)
+                self.presenter?.fetchCurrentWeather(request: request)
+            }
+        }
+        
+    }
+    
     func presenterDidFetchCurrentWeather() {}
     
     func presenterDidFetchWeatherForecast() {}
+}
+
+
+extension WeatherViewController: CLLocationManagerDelegate {
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        
+        switch self.locationManager?.authorizationStatus {
+        case .authorizedWhenInUse:
+            self.fetchCurrentWeather()
+            break
+        case .authorizedAlways:
+            self.fetchCurrentWeather()
+            break
+        case .denied:
+            //Show message
+            break
+        case .notDetermined:
+            self.locationManager?.requestWhenInUseAuthorization()
+           break
+        default:
+            break
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+    }
 }

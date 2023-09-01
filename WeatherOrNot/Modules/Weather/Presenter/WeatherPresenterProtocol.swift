@@ -14,8 +14,6 @@ protocol WeatherPresenterProtocol {
     var interactor: WeatherInteractorProtocol? { get set }
     
     //MARK: - Input
-    func viewDidLoad()
-    func requestUserLocation()
     func fetchCurrentWeather(request: CurrentWeatherRequest)
     func fetchWeatherForecast(request: WeatherForecastRequest)
     
