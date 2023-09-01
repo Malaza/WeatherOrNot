@@ -9,11 +9,11 @@ import Foundation
 
 protocol WeatherPresenterProtocol {
     
-    var view: WeatherViewControllerProtocol? { get set }
+    var view: WeatherViewProtocol? { get set }
     var router: WeatherRouterProtocol? { get set }
     var interactor: WeatherInteractorProtocol? { get set }
     
-    
+    func requestUserLocation()
     func fetchCurrentWeather(completion: @escaping ServiceCompletion)
     func fetchWeatherForecast(completion: @escaping ServiceCompletion)
 }

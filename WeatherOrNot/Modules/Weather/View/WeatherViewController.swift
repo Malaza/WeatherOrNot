@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol WeatherViewControllerProtocol {
+protocol WeatherViewProtocol {
 
 }
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController & WeatherViewProtocol {
     
     //MARK: - Outlets
     @IBOutlet weak var weeatherImageView: UIImageView!
@@ -62,5 +62,8 @@ class WeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter?.fetchCurrentWeather(completion: { response, error in
+            
+        })
     }
 }

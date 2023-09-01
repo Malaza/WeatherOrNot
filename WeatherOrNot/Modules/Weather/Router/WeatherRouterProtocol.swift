@@ -9,5 +9,5 @@ import Foundation
 
 protocol WeatherRouterProtocol {
 
-    var presenter: WeatherPresenterProtocol?
+    var presenter: WeatherPresenterProtocol? { get set }
 }

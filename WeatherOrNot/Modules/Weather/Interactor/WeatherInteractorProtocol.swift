@@ -9,7 +9,7 @@ import Foundation
 
 protocol WeatherInteractorProtocol {
     
-    var presenter: WeatherInteractorProtocol? { get set }
+    var presenter: WeatherPresenterProtocol? { get set }
     
     func fetchCurrentWeather()
     func fetchWeatherForecast()

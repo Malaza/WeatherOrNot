@@ -12,9 +12,13 @@ import Foundation
 class WeatherInteractor: WeatherInteractorProtocol {
     
     let service = Service()
-    var presenter: WeatherInteractorProtocol?
+    var presenter: WeatherPresenterProtocol?
     
-    
-    
+    func fetchCurrentWeather() {
+        
+        self.service.serviceGet(payload: <#T##AnyObject?#>, with: <#T##Path#>, completion: <#T##ServiceCompletion##ServiceCompletion##(Any?, ServiceError?) -> Void#>)
+    }
+        
+    func fetchWeatherForecast() {}
     
 }

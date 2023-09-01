@@ -13,14 +13,14 @@ public enum ServiceError: Error {
 
 class Service: ServiceProtocol {
     
-    var completion: ServiceCompletion?
+//    var completion: ServiceCompletion?
     
     
     func serviceGet(payload: AnyObject?, with path: Path, completion: @escaping ServiceCompletion) {
         
-        self.completion = completion
+//        self.completion = completion
         let apiKey = self.getAPIKey()
-        let request = self.getURL(lat: "", long: "", path: path.rawValue, apiKey: apiKey)
+        let request = self.getURL(lat: "18.0212", long: "-39.0022", path: path.rawValue, apiKey: apiKey)
         
         request.httpMethod = "GET"
         
@@ -28,10 +28,10 @@ class Service: ServiceProtocol {
             
             DispatchQueue.main.async() {
                 if (error != nil) {
-                    self.completion!(nil, .failed)
+                    completion(nil, .failed)
                 }
                 else {
-                    self.completion!(data, nil)
+                    completion(data, nil)
                 }
             }
         })
