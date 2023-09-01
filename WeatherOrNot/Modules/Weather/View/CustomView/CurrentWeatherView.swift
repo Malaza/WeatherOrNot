@@ -17,24 +17,28 @@ class CurrentWeatherView: UIView {
 
     @IBOutlet weak var currentLabel: UILabel! {
         didSet {
+            currentLabel.textColor = .white
             currentLabel.numberOfLines = 0
         }
     }
 
     @IBOutlet weak var minWeatherLabel: UILabel! {
         didSet {
+            minWeatherLabel.textColor = .white
             minWeatherLabel.numberOfLines = 0
         }
     }
 
     @IBOutlet weak var currentWeatherLabel: UILabel! {
         didSet {
+            currentWeatherLabel.textColor = .white
             currentWeatherLabel.numberOfLines = 0
         }
     }
 
     @IBOutlet weak var maxWeatherLabel: UILabel! {
         didSet {
+            maxWeatherLabel.textColor = .white
             maxWeatherLabel.numberOfLines = 0
         }
     }

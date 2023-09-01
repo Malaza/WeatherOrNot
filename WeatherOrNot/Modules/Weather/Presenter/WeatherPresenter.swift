@@ -48,7 +48,7 @@ class WeatherPresenter: WeatherPresenterProtocol {
         
         switch result {
             case .success(let forecast):
-            let model = self.transformToModel(response: forecast)
+            let model = self.transformToModelList(response: forecast)
             self.view?.presenterDidFetchWeatherForecast(with: .success(model))
             case .failure(let error):
             self.view?.presenterDidFetchWeatherForecast(with: .failure(error))
@@ -88,9 +88,23 @@ class WeatherPresenter: WeatherPresenterProtocol {
         return .sunny
     }
     
-    private func transformToModel(response: WeatherForecastResponse) -> WeatherForecastModel {
+    private func transformToModelList(response: WeatherForecastResponse) -> [ForecastModel] {
         
-        let model = WeatherForecastModel()
+        var array = [ForecastModel]()
+        
+        if let response = response.list {
+            for forecastResponse in response {
+                let forecast = self.transformToForecastModel(response: forecastResponse)
+                array.append(forecast)
+            }
+        }
+        return array
+    }
+    
+    private func transformToForecastModel(response: ForecastResponse) -> ForecastModel {
+        let model = ForecastModel()
+        let temp = Int(response.main?.temp ?? 0)
+        model.temp = "\(temp)º"
         return model
     }
 }

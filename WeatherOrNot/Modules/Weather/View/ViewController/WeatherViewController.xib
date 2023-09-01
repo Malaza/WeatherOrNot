@@ -21,21 +21,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDY-bI-xZu" customClass="CurrentWeatherView" customModule="WeatherOrNot" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwN-XG-rsB" customClass="WeatherForecastView" customModule="WeatherOrNot" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="300" width="375" height="367"/>
+                    <rect key="frame" x="0.0" y="367" width="375" height="300"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="CDY-bI-xZu" secondAttribute="trailing" id="AlJ-lF-c2e"/>
-                <constraint firstItem="CDY-bI-xZu" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.45" id="PdS-NL-LzA"/>
+                <constraint firstItem="CDY-bI-xZu" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.55" id="PdS-NL-LzA"/>
                 <constraint firstItem="CDY-bI-xZu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YZX-dc-tfy"/>
                 <constraint firstAttribute="bottom" secondItem="rwN-XG-rsB" secondAttribute="bottom" id="jG5-R8-KWc"/>
-                <constraint firstItem="rwN-XG-rsB" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.55" id="kzb-nP-zlz"/>
+                <constraint firstItem="rwN-XG-rsB" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.45" id="kzb-nP-zlz"/>
                 <constraint firstAttribute="trailing" secondItem="rwN-XG-rsB" secondAttribute="trailing" id="o0S-tF-jzK"/>
                 <constraint firstItem="rwN-XG-rsB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oG6-NP-Ujn"/>
                 <constraint firstItem="CDY-bI-xZu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oy6-UY-512"/>

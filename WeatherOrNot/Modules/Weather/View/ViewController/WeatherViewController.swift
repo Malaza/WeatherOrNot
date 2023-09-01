@@ -49,7 +49,7 @@ class WeatherViewController: UIViewController {
         }
         
         UIView.animate(withDuration: 1.0,
-                       delay: 0.0) {
+                       delay: 1.0) {
             self.view.backgroundColor = color
         }
     }
@@ -96,7 +96,7 @@ extension WeatherViewController: WeatherViewProtocol {
         }
     }
     
-    func presenterDidFetchWeatherForecast(with result: Result<WeatherForecastModel, Error>) {
+    func presenterDidFetchWeatherForecast(with result: Result<[ForecastModel], Error>) {
         
         switch result {
         case .success(let model):

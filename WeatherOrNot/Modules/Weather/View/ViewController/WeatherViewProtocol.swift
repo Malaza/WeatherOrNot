@@ -11,5 +11,5 @@ protocol WeatherViewProtocol {
     func fetchCurrentWeather()
     func fetchWeatherForecast()
     func presenterDidFetchCurrentWeather(with result: Result<CurrentWeatherModel, Error>)
-    func presenterDidFetchWeatherForecast(with result: Result<WeatherForecastModel, Error>)
+    func presenterDidFetchWeatherForecast(with result: Result<[ForecastModel], Error>)
 }

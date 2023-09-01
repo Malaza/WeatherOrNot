@@ -16,7 +16,7 @@ class WeatherForecastView: UIView {
     @IBOutlet weak var tuesdayLabel: UILabel! {
         didSet {
             tuesdayLabel.textColor = .white
-            tuesdayLabel.font = UIFont.systemFont(ofSize: 18)
+            tuesdayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         }
     }
     
@@ -25,14 +25,14 @@ class WeatherForecastView: UIView {
     @IBOutlet weak var tuesdayWeatherLabel: UILabel! {
         didSet {
             tuesdayWeatherLabel.textColor = .white
-            tuesdayWeatherLabel.font = UIFont.systemFont(ofSize: 18)
+            tuesdayWeatherLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         }
     }
     
     @IBOutlet weak var wednesdayLabel: UILabel! {
         didSet {
             wednesdayLabel.textColor = .white
-            wednesdayLabel.font = UIFont.systemFont(ofSize: 18)
+            wednesdayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         }
     }
     
@@ -41,14 +41,14 @@ class WeatherForecastView: UIView {
     @IBOutlet weak var wednesdayWeatherLabel: UILabel! {
         didSet {
             wednesdayWeatherLabel.textColor = .white
-            wednesdayWeatherLabel.font = UIFont.systemFont(ofSize: 18)
+            wednesdayWeatherLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         }
     }
     
     @IBOutlet weak var thursdayLabel: UILabel! {
         didSet {
             thursdayLabel.textColor = .white
-            thursdayLabel.font = UIFont.systemFont(ofSize: 18)
+            thursdayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         }
     }
     
@@ -57,14 +57,14 @@ class WeatherForecastView: UIView {
     @IBOutlet weak var thursdayWeatherLabel: UILabel! {
         didSet {
             thursdayWeatherLabel.textColor = .white
-            thursdayWeatherLabel.font = UIFont.systemFont(ofSize: 18)
+            thursdayWeatherLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         }
     }
     
     @IBOutlet weak var fridayLabel: UILabel! {
         didSet {
             fridayLabel.textColor = .white
-            fridayLabel.font = UIFont.systemFont(ofSize: 18)
+            fridayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         }
     }
     
@@ -73,14 +73,14 @@ class WeatherForecastView: UIView {
     @IBOutlet weak var fridayWeatherLabel: UILabel! {
         didSet {
             fridayWeatherLabel.textColor = .white
-            fridayWeatherLabel.font = UIFont.systemFont(ofSize: 18)
+            fridayWeatherLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         }
     }
     
     @IBOutlet weak var saturdayLabel: UILabel! {
         didSet {
             saturdayLabel.textColor = .white
-            saturdayLabel.font = UIFont.systemFont(ofSize: 18)
+            saturdayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         }
     }
     
@@ -89,7 +89,7 @@ class WeatherForecastView: UIView {
     @IBOutlet weak var saturdayWeatherLabel: UILabel! {
         didSet {
             saturdayWeatherLabel.textColor = .white
-            saturdayWeatherLabel.font = UIFont.systemFont(ofSize: 18)
+            saturdayWeatherLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         }
     }
 
@@ -114,21 +114,21 @@ class WeatherForecastView: UIView {
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
-    func configureForecastView(model: WeatherForecastModel) {
+    func configureForecastView(model: [ForecastModel]) {
         
-//        self.tuesdayImageView = 
-//        self.tuesdayWeatherLabel.text = model.
-//        
-//        self.wednesdayImageView = 
-//        self.wednesdayWeatherLabel.text = model.
-//        
-//        self.thursdayImageView = 
-//        self.thursdayWeatherLabel.text = model.
-//        
-//        self.fridayImageView = 
-//        self.fridayWeatherLabel.text = model.
-//        
-//        self.saturdayImageView = 
-//        self.saturdayWeatherLabel.text = model.
+        self.tuesdayImageView.image = UIImage(named: "ic_\(CurrentWeatherType.sunny.rawValue)")
+        self.tuesdayWeatherLabel.text = model[0].temp
+        
+        self.wednesdayImageView.image = UIImage(named: "ic_\(CurrentWeatherType.sunny.rawValue)")
+        self.wednesdayWeatherLabel.text = model[1].temp
+        
+        self.thursdayImageView.image = UIImage(named: "ic_\(CurrentWeatherType.sunny.rawValue)")
+        self.thursdayWeatherLabel.text = model[2].temp
+        
+        self.fridayImageView.image = UIImage(named: "ic_\(CurrentWeatherType.sunny.rawValue)")
+        self.fridayWeatherLabel.text = model[3].temp
+        
+        self.saturdayImageView.image = UIImage(named: "ic_\(CurrentWeatherType.sunny.rawValue)")
+        self.saturdayWeatherLabel.text = model[4].temp
     }
 }
