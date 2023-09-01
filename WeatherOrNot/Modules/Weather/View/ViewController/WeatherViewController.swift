@@ -35,15 +35,32 @@ class WeatherViewController: UIViewController {
         self.setupLocationManager()
     }
     
-    
-    
+    private func setBackgroundColorWithType(type: CurrentWeatherType) {
+        
+        var color: UIColor?
+        
+        switch type {
+        case .cloudy: color = .cloudyColor
+            break
+        case .rainy: color = .rainyColor
+            break
+        case .sunny: color = .sunnyColor
+            break
+        }
+        
+        UIView.animate(withDuration: 1.0,
+                       delay: 0.0) {
+            self.view.backgroundColor = color
+        }
+    }
 }
 
 
 extension WeatherViewController: WeatherViewProtocol {
     
     func fetchCurrentWeather() {
-        if self.locationManager?.authorizationStatus == .authorizedAlways {
+        if self.locationManager?.authorizationStatus == .authorizedAlways ||
+            self.locationManager?.authorizationStatus == .authorizedWhenInUse {
             if let coordinate = self.locationManager?.location?.coordinate {
                 let request = CurrentWeatherRequest(lat: coordinate.latitude,
                                                     long: coordinate.longitude,
@@ -54,7 +71,8 @@ extension WeatherViewController: WeatherViewProtocol {
     }
     
     func fetchWeatherForecast() {
-        if self.locationManager?.authorizationStatus == .authorizedAlways {
+        if self.locationManager?.authorizationStatus == .authorizedAlways ||
+            self.locationManager?.authorizationStatus == .authorizedWhenInUse {
             if let coordinate = self.locationManager?.location?.coordinate {
                 let request = WeatherForecastRequest(lat: coordinate.latitude,
                                                     long: coordinate.longitude,
@@ -65,9 +83,13 @@ extension WeatherViewController: WeatherViewProtocol {
     }
     
     func presenterDidFetchCurrentWeather(with result: Result<CurrentWeatherModel, Error>) {
+        
         switch result {
         case .success(let model):
             self.currentWeatherView.configureCurrentView(model: model)
+            self.setBackgroundColorWithType(type: model.type)
+            
+            //Chaining service calls
             self.fetchWeatherForecast()
         case .failure(let error):
             self.showErrorMessage(message: error.localizedDescription)
@@ -75,6 +97,7 @@ extension WeatherViewController: WeatherViewProtocol {
     }
     
     func presenterDidFetchWeatherForecast(with result: Result<WeatherForecastModel, Error>) {
+        
         switch result {
         case .success(let model):
             self.weatherForecastView.configureForecastView(model: model)

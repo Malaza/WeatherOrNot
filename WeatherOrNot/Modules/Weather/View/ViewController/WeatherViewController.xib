@@ -22,11 +22,11 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDY-bI-xZu" customClass="CurrentWeatherView" customModule="WeatherOrNot" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwN-XG-rsB" customClass="WeatherForecastView" customModule="WeatherOrNot" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="300" width="375" height="367"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

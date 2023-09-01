@@ -74,7 +74,7 @@ class WeatherPresenter: WeatherPresenterProtocol {
         return model
     }
     
-    private func transformWeatherCode(code: Int) -> CurrentWeatherTypes {
+    private func transformWeatherCode(code: Int) -> CurrentWeatherType {
         
         //https://openweathermap.org/weather-conditions
         

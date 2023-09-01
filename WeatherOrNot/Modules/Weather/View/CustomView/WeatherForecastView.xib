@@ -8,27 +8,45 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherForecastView" customModule="WeatherOrNot" customModuleProvider="target">
+            <connections>
+                <outlet property="fridayImageView" destination="YgC-MK-I4A" id="21D-iz-zUi"/>
+                <outlet property="fridayLabel" destination="teD-YJ-9Sv" id="6k3-Zn-y3P"/>
+                <outlet property="fridayWeatherLabel" destination="8X8-1y-ktQ" id="PCs-AA-Wff"/>
+                <outlet property="saturdayImageView" destination="O7g-K7-xAT" id="285-Fh-JUb"/>
+                <outlet property="saturdayLabel" destination="ECg-yw-g4O" id="cmK-ig-sCR"/>
+                <outlet property="saturdayWeatherLabel" destination="MKe-yf-xXp" id="T1o-pj-QAC"/>
+                <outlet property="thursdayImageView" destination="db4-ic-eQy" id="SEL-ZR-P6s"/>
+                <outlet property="thursdayLabel" destination="Lhn-5d-wJw" id="Y37-nf-Y8v"/>
+                <outlet property="thursdayWeatherLabel" destination="OV9-ji-Fnk" id="vDu-cO-0F3"/>
+                <outlet property="tuesdayImageView" destination="3Pp-vc-Zdv" id="hme-Ah-BOs"/>
+                <outlet property="tuesdayLabel" destination="6p4-QV-MVJ" id="q7v-mS-3Ot"/>
+                <outlet property="tuesdayWeatherLabel" destination="N5N-x9-ViG" id="vMj-TU-L7i"/>
+                <outlet property="wednesdayImageView" destination="BSk-vr-JAZ" id="kv7-sV-Zpv"/>
+                <outlet property="wednesdayLabel" destination="aAZ-zf-Bz5" id="Q6x-qO-zWF"/>
+                <outlet property="wednesdayWeatherLabel" destination="h2J-M0-emM" id="Dyv-Fk-YhZ"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WeatherForecastView" customModule="WeatherOrNot" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="466" height="398"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="466" height="333"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hM4-r0-h3Y">
-                    <rect key="frame" x="0.0" y="0.0" width="466" height="398"/>
+                    <rect key="frame" x="0.0" y="0.0" width="466" height="333"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uXx-3U-q7J">
-                            <rect key="frame" x="0.0" y="70" width="466" height="2"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXx-3U-q7J">
+                            <rect key="frame" x="0.0" y="0.0" width="466" height="1"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="2" id="2r7-pn-D1X"/>
+                                <constraint firstAttribute="height" constant="1" id="2r7-pn-D1X"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HWX-Wg-Igh">
-                            <rect key="frame" x="0.0" y="72" width="466" height="55"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWX-Wg-Igh">
+                            <rect key="frame" x="0.0" y="1" width="466" height="55"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6p4-QV-MVJ">
-                                    <rect key="frame" x="20" y="0.0" width="42" height="55"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6p4-QV-MVJ">
+                                    <rect key="frame" x="20" y="0.0" width="64" height="55"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -60,11 +78,11 @@
                                 <constraint firstAttribute="height" constant="55" id="tMq-wM-VfC"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aaq-Gx-wW1">
-                            <rect key="frame" x="0.0" y="127" width="466" height="55"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaq-Gx-wW1">
+                            <rect key="frame" x="0.0" y="56" width="466" height="55"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAZ-zf-Bz5">
-                                    <rect key="frame" x="20" y="0.0" width="42" height="55"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAZ-zf-Bz5">
+                                    <rect key="frame" x="20" y="0.0" width="90" height="55"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -96,11 +114,11 @@
                                 <constraint firstItem="BSk-vr-JAZ" firstAttribute="centerX" secondItem="aaq-Gx-wW1" secondAttribute="centerX" id="tEb-0F-G07"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7E6-Bd-k01">
-                            <rect key="frame" x="0.0" y="182" width="466" height="55"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7E6-Bd-k01">
+                            <rect key="frame" x="0.0" y="111" width="466" height="55"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhn-5d-wJw">
-                                    <rect key="frame" x="20" y="0.0" width="42" height="55"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhn-5d-wJw">
+                                    <rect key="frame" x="20" y="0.0" width="72" height="55"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -132,11 +150,11 @@
                                 <constraint firstItem="Lhn-5d-wJw" firstAttribute="leading" secondItem="7E6-Bd-k01" secondAttribute="leading" constant="20" id="zMs-P7-JIU"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Bn-qQ-sNk">
-                            <rect key="frame" x="0.0" y="237" width="466" height="55"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Bn-qQ-sNk">
+                            <rect key="frame" x="0.0" y="166" width="466" height="55"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teD-YJ-9Sv">
-                                    <rect key="frame" x="20" y="0.0" width="42" height="55"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teD-YJ-9Sv">
+                                    <rect key="frame" x="20" y="0.0" width="47" height="55"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -170,11 +188,11 @@
                                 <constraint firstAttribute="bottom" secondItem="teD-YJ-9Sv" secondAttribute="bottom" id="xoS-ni-pYJ"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ih-Nr-COS">
-                            <rect key="frame" x="0.0" y="292" width="466" height="55"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ih-Nr-COS">
+                            <rect key="frame" x="0.0" y="221" width="466" height="55"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECg-yw-g4O">
-                                    <rect key="frame" x="20" y="0.0" width="42" height="55"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECg-yw-g4O">
+                                    <rect key="frame" x="20" y="0.0" width="68" height="55"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -207,12 +225,13 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="HWX-Wg-Igh" firstAttribute="leading" secondItem="hM4-r0-h3Y" secondAttribute="leading" id="4De-on-neC"/>
                         <constraint firstAttribute="trailing" secondItem="8Bn-qQ-sNk" secondAttribute="trailing" id="66o-pm-UYG"/>
                         <constraint firstItem="aaq-Gx-wW1" firstAttribute="top" secondItem="HWX-Wg-Igh" secondAttribute="bottom" id="AGX-0E-EMU"/>
                         <constraint firstItem="4Ih-Nr-COS" firstAttribute="top" secondItem="8Bn-qQ-sNk" secondAttribute="bottom" id="FPn-R3-VnI"/>
+                        <constraint firstItem="uXx-3U-q7J" firstAttribute="top" secondItem="hM4-r0-h3Y" secondAttribute="top" id="HL7-up-qNK"/>
                         <constraint firstItem="4Ih-Nr-COS" firstAttribute="leading" secondItem="hM4-r0-h3Y" secondAttribute="leading" id="Itt-5k-jeB"/>
                         <constraint firstItem="uXx-3U-q7J" firstAttribute="leading" secondItem="hM4-r0-h3Y" secondAttribute="leading" id="JP3-ee-Bme"/>
                         <constraint firstAttribute="trailing" secondItem="HWX-Wg-Igh" secondAttribute="trailing" id="Jla-1z-wbf"/>
@@ -229,7 +248,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="hM4-r0-h3Y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1HM-dC-LI7"/>
                 <constraint firstAttribute="trailing" secondItem="hM4-r0-h3Y" secondAttribute="trailing" id="3yZ-Gi-61M"/>
@@ -237,15 +256,12 @@
                 <constraint firstItem="hM4-r0-h3Y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ujm-4D-71q"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="209.16030534351145" y="-73.943661971830991"/>
+            <point key="canvasLocation" x="209.16030534351145" y="-96.83098591549296"/>
         </view>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

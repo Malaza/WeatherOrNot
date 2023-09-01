@@ -9,6 +9,9 @@ import UIKit
 
 class CurrentWeatherView: UIView {
 
+    let identifier = "CurrentWeatherView"
+    
+    
     //MARK: - Outlets
     @IBOutlet weak var weatherImageView: UIImageView!
 
@@ -17,8 +20,6 @@ class CurrentWeatherView: UIView {
             currentLabel.numberOfLines = 0
         }
     }
-    
-    @IBOutlet weak var forecastView: UIView!
 
     @IBOutlet weak var minWeatherLabel: UILabel! {
         didSet {
@@ -46,7 +47,6 @@ class CurrentWeatherView: UIView {
     //MARK: - Lifecycle
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
         guard let view = loadViewFromNib() else { return }
         view.frame = self.bounds
         self.addSubview(view)
@@ -55,7 +55,7 @@ class CurrentWeatherView: UIView {
 
     func loadViewFromNib() -> UIView? {
         let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "CurrentWeatherView", bundle: bundle)
+        let nib = UINib(nibName: self.identifier, bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
