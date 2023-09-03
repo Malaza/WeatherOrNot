@@ -39,13 +39,11 @@ class WeatherInteractor: WeatherInteractorProtocol {
         self.service.serviceGet(lat: request.lat, long: request.long, with: request.path) { (data, error) in
             
             guard let data = data as? Data, error == nil else {
-                self.presenter?.interactorDidFetchCurrentWeather(with: .failure(ServiceError.failed))
+                self.presenter?.interactorDidFetchWeatherForecast(with: .failure(ServiceError.failed))
                 print(ServiceError.failed.localizedDescription)
                 return
             }
             do {
-//                let responseData =  try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
-//                print(responseData)
                 let forecast = try JSONDecoder().decode(WeatherForecastResponse.self, from: data)
                 self.presenter?.interactorDidFetchWeatherForecast(with: .success(forecast))
             }

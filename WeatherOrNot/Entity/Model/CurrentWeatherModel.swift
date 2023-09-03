@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CurrentWeatherType: String {
+public enum WeatherType: String {
     case cloudy = "cloudy"
     case rainy = "rainy"
     case sunny = "sunny"
@@ -18,5 +18,5 @@ class CurrentWeatherModel {
     var tempMin: String!
     var tempMax: String!
     var mainWeather: String!
-    var type: CurrentWeatherType = .sunny
+    var type: WeatherType = .sunny
 }

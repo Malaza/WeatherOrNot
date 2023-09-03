@@ -74,7 +74,7 @@ class WeatherPresenter: WeatherPresenterProtocol {
         return model
     }
     
-    private func transformWeatherCode(code: Int) -> CurrentWeatherType {
+    private func transformWeatherCode(code: Int) -> WeatherType {
         
         //https://openweathermap.org/weather-conditions
         
@@ -102,9 +102,13 @@ class WeatherPresenter: WeatherPresenterProtocol {
     }
     
     private func transformToForecastModel(response: ForecastResponse) -> ForecastModel {
-        let model = ForecastModel()
-        let temp = Int(response.main?.temp ?? 0)
+        var model = ForecastModel()
+        var temp = Int(response.main?.temp ?? 0)
         model.temp = "\(temp)º"
+        if let weather = response.weather?[0] {
+            model.mainWeather = weather.main
+            model.type = self.transformWeatherCode(code: weather.id ?? 0)
+        }
         return model
     }
 }

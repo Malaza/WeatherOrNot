@@ -35,7 +35,7 @@ class WeatherViewController: UIViewController {
         self.setupLocationManager()
     }
     
-    private func setBackgroundColorWithType(type: CurrentWeatherType) {
+    private func setBackgroundColorWithType(type: WeatherType) {
         
         var color: UIColor?
         
@@ -120,7 +120,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
             self.fetchCurrentWeather()
             break
         case .denied:
-            //Show message
+            self.showErrorMessage(message: "This app uses your location to improve your app experience. Please allow location permission")
             break
         case .notDetermined:
             self.locationManager?.requestWhenInUseAuthorization()
@@ -131,6 +131,6 @@ extension WeatherViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        self.showErrorMessage(message: "We need location access in order to improve your app experience")
+        self.showErrorMessage(message: "This app uses your location to improve your app experience. Please allow location permission")
     }
 }

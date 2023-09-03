@@ -107,6 +107,14 @@ class WeatherForecastView: UIView {
         self.addSubview(view)
         contentView = view
     }
+    
+    init() {
+        super.init(frame: CGRect.zero)
+        guard let view = loadViewFromNib() else { return }
+        view.frame = self.bounds
+        self.addSubview(view)
+        contentView = view
+    }
 
     func loadViewFromNib() -> UIView? {
         let bundle = Bundle(for: type(of: self))
@@ -116,19 +124,25 @@ class WeatherForecastView: UIView {
     
     func configureForecastView(model: [ForecastModel]) {
         
-        self.tuesdayImageView.image = UIImage(named: "ic_\(CurrentWeatherType.sunny.rawValue)")
+        self.tuesdayImageView.image = self.getImageWithType(type: model[0].type)
         self.tuesdayWeatherLabel.text = model[0].temp
         
-        self.wednesdayImageView.image = UIImage(named: "ic_\(CurrentWeatherType.sunny.rawValue)")
+        self.wednesdayImageView.image = self.getImageWithType(type: model[1].type)
         self.wednesdayWeatherLabel.text = model[1].temp
         
-        self.thursdayImageView.image = UIImage(named: "ic_\(CurrentWeatherType.sunny.rawValue)")
+        self.thursdayImageView.image = self.getImageWithType(type: model[2].type)
         self.thursdayWeatherLabel.text = model[2].temp
         
-        self.fridayImageView.image = UIImage(named: "ic_\(CurrentWeatherType.sunny.rawValue)")
+        self.fridayImageView.image = self.getImageWithType(type: model[3].type)
         self.fridayWeatherLabel.text = model[3].temp
         
-        self.saturdayImageView.image = UIImage(named: "ic_\(CurrentWeatherType.sunny.rawValue)")
+        self.saturdayImageView.image = self.getImageWithType(type: model[4].type)
         self.saturdayWeatherLabel.text = model[4].temp
+    }
+    
+    
+    //MARK: - Helper methods
+    func getImageWithType(type: WeatherType) -> UIImage {
+        return UIImage(named: "ic_\(type.rawValue)")!
     }
 }
