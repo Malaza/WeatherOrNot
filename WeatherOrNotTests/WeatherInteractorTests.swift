@@ -6,30 +6,47 @@
 //
 
 import XCTest
+@testable import WeatherOrNot
+
+enum TestError: Error {
+    case interactorInstantiationFailed
+}
 
 final class WeatherInteractorTests: XCTestCase {
-
+    
+    var interactor: WeatherInteractor?
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let vc = WeatherViewController()
+        interactor = WeatherInteractor()
+        let router = WeatherRouter()
+        guard let nonEmptyInteractor = interactor else { throw TestError.interactorInstantiationFailed }
+        let presenter = WeatherPresenter(interactor: nonEmptyInteractor, router: router, view: vc)
+        vc.presenter = presenter
+        interactor?.presenter = presenter
     }
 
+    
+    
+    func testThatServiceIsAvailable() throws {
+        XCTAssertNotNil(interactor?.service)
+    }
+
+    func testThatInteractorInstantiated() throws {
+        XCTAssertNotNil(interactor?.presenter)
+    }
+    
+    func testThatRouterInstantiated() throws {
+        XCTAssertNotNil(interactor?.presenter?.router)
+    }
+
+    func testThatVCInstantiated() throws {
+        XCTAssertNotNil(interactor?.presenter?.view)
+    }
+    
+    func testPerformanceExample() throws {}
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        interactor = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
