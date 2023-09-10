@@ -76,7 +76,7 @@ class WeatherPresenter: WeatherPresenterProtocol {
     
     private func transformWeatherCode(code: Int) -> WeatherType {
         
-        //https://openweathermap.org/weather-conditions
+        
         
         if code >= 500 && code < 600 { //Rain
             return .rainy

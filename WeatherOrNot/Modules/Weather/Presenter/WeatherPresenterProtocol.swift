@@ -17,6 +17,7 @@ protocol WeatherPresenterProtocol {
     func fetchCurrentWeather(request: CurrentWeatherRequest)
     func fetchWeatherForecast(request: WeatherForecastRequest)
     
+    
     //MARK: - Output
     func interactorDidFetchCurrentWeather(with result: Result<CurrentWeatherResponse, Error>)
     func interactorDidFetchWeatherForecast(with result: Result<WeatherForecastResponse, Error>)
