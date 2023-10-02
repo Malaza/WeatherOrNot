@@ -315,9 +315,9 @@
 		59B4D9B22AA2334E0030C1B4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				59B4D9B02AA212CC0030C1B4 /* WeatherViewProtocol.swift */,
 				59A5F87A2A9F5B8100CF28E2 /* WeatherViewController.swift */,
 				59A5F87B2A9F5B8100CF28E2 /* WeatherViewController.xib */,
-				59B4D9B02AA212CC0030C1B4 /* WeatherViewProtocol.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

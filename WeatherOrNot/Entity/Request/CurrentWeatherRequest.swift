@@ -8,7 +8,7 @@
 import Foundation
 
 struct CurrentWeatherRequest {
-    var lat: Double!
-    var long: Double!
-    var path: String!
+    var lat: Double?
+    var long: Double?
+    var path: String?
 }

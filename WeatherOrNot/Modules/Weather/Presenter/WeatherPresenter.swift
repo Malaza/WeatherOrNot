@@ -12,6 +12,9 @@ import Foundation
 
 class WeatherPresenter: WeatherPresenterProtocol {
     
+    let rainCode = 500...600
+    let cloudCode = 800...900
+    
     var view: WeatherViewProtocol?
     var router: WeatherRouterProtocol?
     var interactor: WeatherInteractorProtocol?
@@ -75,16 +78,13 @@ class WeatherPresenter: WeatherPresenterProtocol {
     }
     
     private func transformWeatherCode(code: Int) -> WeatherType {
-        
-        
-        
-        if code >= 500 && code < 600 { //Rain
+    
+        if rainCode ~= code {
             return .rainy
         }
-        else if code > 800 && code < 900 { //Cloudy
+        else if cloudCode ~= code {
             return .cloudy
         }
-//        else if code == 800 { // Sunny
         return .sunny
     }
     
@@ -103,7 +103,7 @@ class WeatherPresenter: WeatherPresenterProtocol {
     
     private func transformToForecastModel(response: ForecastResponse) -> ForecastModel {
         var model = ForecastModel()
-        var temp = Int(response.main?.temp ?? 0)
+        let temp = Int(response.main?.temp ?? 0)
         model.temp = "\(temp)º"
         if let weather = response.weather?[0] {
             model.mainWeather = weather.main

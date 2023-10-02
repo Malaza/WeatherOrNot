@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct CurrentWeatherResponse: Codable {
+struct CurrentWeatherResponse: Decodable {
     var coord: CoordResponse?
     var weather: [WeatherResponse]?
     var base: String?
@@ -25,19 +25,19 @@ struct CurrentWeatherResponse: Codable {
     var cod: Int?
 }
 
-struct CoordResponse: Codable {
+struct CoordResponse: Decodable {
     var lon: Double?
     var lat: Double?
 }
 
-struct WeatherResponse: Codable {
+struct WeatherResponse: Decodable {
     var id: Int?
     var main: String?
     var description: String?
     var icon: String?
 }
 
-struct MainResponse: Codable {
+struct MainResponse: Decodable {
     var temp: Double?
     var temp_kf: Double?
     var feels_like: Double?
@@ -49,21 +49,21 @@ struct MainResponse: Codable {
     var grnd_level: Int?
 }
 
-struct WindResponse: Codable {
+struct WindResponse: Decodable {
     var speed: Double?
     var deg: Int?
     var gust: Double?
 }
 
-struct RainResponse: Codable {
+struct RainResponse: Decodable {
     var hour1: Double?
 }
 
-struct CloudsResponse: Codable {
+struct CloudsResponse: Decodable {
     var all: Int?
 }
 
-struct SysResponse: Codable {
+struct SysResponse: Decodable {
     var type: Int?
     var id: Int?
     var country: String?

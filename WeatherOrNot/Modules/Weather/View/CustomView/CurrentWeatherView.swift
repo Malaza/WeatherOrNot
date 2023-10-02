@@ -13,30 +13,30 @@ class CurrentWeatherView: UIView {
     
     
     //MARK: - Outlets
-    @IBOutlet weak var weatherImageView: UIImageView!
+    @IBOutlet private weak var weatherImageView: UIImageView!
 
-    @IBOutlet weak var currentLabel: UILabel! {
+    @IBOutlet private weak var currentLabel: UILabel! {
         didSet {
             currentLabel.textColor = .white
             currentLabel.numberOfLines = 0
         }
     }
 
-    @IBOutlet weak var minWeatherLabel: UILabel! {
+    @IBOutlet private weak var minWeatherLabel: UILabel! {
         didSet {
             minWeatherLabel.textColor = .white
             minWeatherLabel.numberOfLines = 0
         }
     }
 
-    @IBOutlet weak var currentWeatherLabel: UILabel! {
+    @IBOutlet private weak var currentWeatherLabel: UILabel! {
         didSet {
             currentWeatherLabel.textColor = .white
             currentWeatherLabel.numberOfLines = 0
         }
     }
 
-    @IBOutlet weak var maxWeatherLabel: UILabel! {
+    @IBOutlet private weak var maxWeatherLabel: UILabel! {
         didSet {
             maxWeatherLabel.textColor = .white
             maxWeatherLabel.numberOfLines = 0
@@ -52,7 +52,7 @@ class CurrentWeatherView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         guard let view = loadViewFromNib() else { return }
-        view.frame = self.bounds
+        view.frame = bounds
         self.addSubview(view)
         contentView = view
     }
@@ -64,10 +64,14 @@ class CurrentWeatherView: UIView {
     }
     
     func configureCurrentView(model: CurrentWeatherModel) {
-        self.currentLabel.attributedText = self.attributedStringForTitle(title: model.temp, subTitle: model.mainWeather.uppercased(), large: true)
-        self.minWeatherLabel.attributedText = self.attributedStringForTitle(title: model.tempMin, subTitle: "Min", large: false)
-        self.currentWeatherLabel.attributedText = self.attributedStringForTitle(title:model.tempMax, subTitle: "Current", large: false)
-        self.maxWeatherLabel.attributedText = self.attributedStringForTitle(title: model.temp, subTitle: "Max", large: false)
+        self.currentLabel.attributedText = self.attributedStringForTitle(title: model.temp ?? "",
+                                                                         subTitle: model.mainWeather?.uppercased() ?? "", large: true)
+        self.minWeatherLabel.attributedText = self.attributedStringForTitle(title: model.tempMin ?? "",
+                                                                            subTitle: "Min", large: false)
+        self.currentWeatherLabel.attributedText = self.attributedStringForTitle(title:model.tempMax ?? "",
+                                                                                subTitle: "Current", large: false)
+        self.maxWeatherLabel.attributedText = self.attributedStringForTitle(title: model.temp ?? "",
+                                                                            subTitle: "Max", large: false)
         self.weatherImageView.image = UIImage(named: model.type.rawValue)
     }
     

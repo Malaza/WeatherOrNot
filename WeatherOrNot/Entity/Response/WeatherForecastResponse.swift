@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WeatherForecastResponse: Codable {
+struct WeatherForecastResponse: Decodable {
     
     var cod: String?
     var message: Int?
@@ -16,7 +16,7 @@ struct WeatherForecastResponse: Codable {
     var city: CityResponse?
 }
 
-struct ForecastResponse: Codable {
+struct ForecastResponse: Decodable {
     
     var dt: Int?
     var main: MainResponse?
@@ -30,7 +30,7 @@ struct ForecastResponse: Codable {
     var dt_txt: String?
 }
 
-struct CityResponse: Codable {
+struct CityResponse: Decodable {
     var id: Int?
     var name: String?
     var coord: CoordResponse?

@@ -15,16 +15,18 @@ class Service: ServiceProtocol {
     
     func serviceGet(lat: Double, long: Double, with path: String, completion: @escaping ServiceCompletion) {
         
-        let request = self.getURLRequest(lat: lat, long: long, path: path, apiKey: Constants.apiKey)
+        let request = getURLRequest(lat: lat, long: long, path: path, apiKey: Constants.apiKey)
         request.httpMethod = "GET"
         
         let dataTask = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            
-            DispatchQueue.main.async() {
-                if (error != nil) {
+
+            if (error != nil) {
+                DispatchQueue.main.async() {
                     completion(nil, .failed)
                 }
-                else {
+            }
+            else {
+                DispatchQueue.main.async() {
                     completion(data, nil)
                 }
             }

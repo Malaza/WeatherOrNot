@@ -14,9 +14,9 @@ public enum WeatherType: String {
 }
 
 class CurrentWeatherModel {
-    var temp: String!
-    var tempMin: String!
-    var tempMax: String!
-    var mainWeather: String!
+    var temp: String?
+    var tempMin: String?
+    var tempMax: String?
+    var mainWeather: String?
     var type: WeatherType = .sunny
 }

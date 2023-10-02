@@ -9,6 +9,6 @@ import Foundation
 
 struct ForecastModel {
     var temp: String?
-    var mainWeather: String!
+    var mainWeather: String?
     var type: WeatherType = .sunny
 }

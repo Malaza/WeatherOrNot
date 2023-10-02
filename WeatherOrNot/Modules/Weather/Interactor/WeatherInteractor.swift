@@ -16,11 +16,10 @@ class WeatherInteractor: WeatherInteractorProtocol {
     
     func fetchCurrentWeather(request: CurrentWeatherRequest) {
         
-        self.service.serviceGet(lat: request.lat, long: request.long, with: request.path) { (data, error) in
+        self.service.serviceGet(lat: request.lat ?? 0, long: request.long ?? 0, with: request.path ?? "") { (data, error) in
             
             guard let data = data as? Data, error == nil else {
                 self.presenter?.interactorDidFetchCurrentWeather(with: .failure(ServiceError.failed))
-                print(ServiceError.failed.localizedDescription)
                 return
             }
             do {
@@ -29,18 +28,16 @@ class WeatherInteractor: WeatherInteractorProtocol {
             }
             catch {
                 self.presenter?.interactorDidFetchCurrentWeather(with: .failure(error))
-                print(error.localizedDescription)
             }
         }
     }
         
     func fetchWeatherForecast(request: WeatherForecastRequest) {
         
-        self.service.serviceGet(lat: request.lat, long: request.long, with: request.path) { (data, error) in
+        self.service.serviceGet(lat: request.lat ?? 0, long: request.long ?? 0, with: request.path ?? "") { (data, error) in
             
             guard let data = data as? Data, error == nil else {
                 self.presenter?.interactorDidFetchWeatherForecast(with: .failure(ServiceError.failed))
-                print(ServiceError.failed.localizedDescription)
                 return
             }
             do {
@@ -49,7 +46,6 @@ class WeatherInteractor: WeatherInteractorProtocol {
             }
             catch {
                 self.presenter?.interactorDidFetchWeatherForecast(with: .failure(error))
-                print(error.localizedDescription)
             }
         }
     }
