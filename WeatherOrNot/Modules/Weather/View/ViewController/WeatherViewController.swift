@@ -115,16 +115,12 @@ extension WeatherViewController: CLLocationManagerDelegate {
         switch self.locationManager?.authorizationStatus {
         case .authorizedWhenInUse:
             self.fetchCurrentWeather()
-            break
         case .authorizedAlways:
             self.fetchCurrentWeather()
-            break
         case .denied:
             self.showErrorMessage(message: "This app uses your location to improve your app experience. Please allow location permission")
-            break
         case .notDetermined:
             self.locationManager?.requestWhenInUseAuthorization()
-           break
         default:
             break
         }
